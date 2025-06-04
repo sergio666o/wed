@@ -1,0 +1,114 @@
+/*uso de clases*/
+.contenedor
+{
+	margin: 20px;
+	background-color: #e3342f;
+	width: 50%;
+	height: 50%;
+	font-size: 40px;
+	margin-left: 5px;
+	padding: 15px;
+	border-radius: 25px;
+	text-align: center;
+	border: double;
+	border-color: #fff;
+	
+
+}
+.contenedor2
+{
+
+	background-image: url(fondodiv2.png);
+	background-size: 55px;
+	background-repeat: repeat;
+	margin-top: 20px;
+	width:20%;
+	height: 20%;
+	font-size: 20px;
+	margin-left: 20%;
+	padding: 20px;
+	border-radius: 20px;
+	border: double;
+	border-color: #0019ff;
+
+
+}
+.contenedormenu
+{
+	width: 50%%;
+	background-color: #666699;
+	display: block;
+
+}
+
+li
+{
+	list-style: none;
+
+
+}
+
+
+a:hover
+{
+ 	
+ 	background-size: 50% 50%;
+ 	background-position-x: left;
+ 		
+}
+
+.contenido
+{
+	width: auto;
+	margin-top: 50px;
+	background-color: f6993f;
+	height: 100%;
+	padding: 15px;
+	text-align: justify;
+	border: double;
+	border-color: #;
+
+}
+
+.layount1
+{
+	display: inline-flex;
+}
+
+.imagenindex
+{
+	width: 25%;
+	
+}
+img
+{
+	border: double;
+	border-color: darkolivegreen;
+}
+img:hover
+{
+	filter: grayscale(90%);
+	border-radius:  70px 70px 70px 70px;/*redondear la imagen*/
+
+}
+
+.imagencomofunciona
+{
+	width: 50%;
+	
+}
+.imagenevolucion
+{
+	width: 25%;
+	
+}
+nav
+{
+	position: absolute;
+	border-top: ;
+}
+h2
+{
+	width: auto;
+	height: 100px;
+}

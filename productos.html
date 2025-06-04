@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Productos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f8f8;
+    }
+
+    h2 {
+      text-align: center;
+      margin: 30px 0 10px;
+    }
+
+    .carousel-container {
+      max-width: 800px;
+      margin: auto;
+      position: relative;
+      overflow: hidden;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slide {
+      min-width: 100%;
+      box-sizing: border-box;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .slide img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      margin-bottom: 15px;
+      border-radius: 8px;
+    }
+
+    .product-name {
+      font-size: 1.2em;
+      margin-bottom: 5px;
+    }
+
+    .product-description {
+      font-size: 0.95em;
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    .product-price {
+      font-weight: bold;
+      color: #008c5f;
+      margin-bottom: 10px;
+    }
+
+    .buy-btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #008c5f;
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+
+    .buy-btn:hover {
+      background-color: #006f4b;
+    }
+
+    .nav-buttons {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+    }
+
+    .nav-buttons button {
+      background: rgba(0, 0, 0, 0.3);
+      border: none;
+      color: #fff;
+      font-size: 24px;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: background 0.3s ease;
+    }
+
+    .nav-buttons button:hover {
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    .buttons-container {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .buttons-container a {
+      display: inline-block;
+      margin: 0 10px;
+      padding: 12px 25px;
+      font-size: 16px;
+      background-color: #008c5f;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+
+    .buttons-container a:hover {
+      background-color: #006f4b;
+    }
+
+    @media (max-width: 600px) {
+      .slide img {
+        max-width: 90%;
+      }
+      .buttons-container a {
+        display: block;
+        margin: 10px auto;
+        width: 80%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<h2>Productos destacados de la veterinaria</h2>
+
+<div class="carousel-container">
+  <div class="slides" id="slides">
+    <div class="slide">
+      <img src="img2.jpg" alt="Alimento premium de 10kg para perros adultos">
+      <div class="product-name">Alimento Premium Perros</div>
+      <div class="product-description">Bolsa de 10kg para perros adultos de razas medianas y grandes.</div>
+      <div class="product-price">$45.00</div>
+      <a href="compra.php?producto=alimento" class="buy-btn">Comprar</a>
+    </div>
+    <div class="slide">
+      <img src="img3.jpg" alt="Juguete de ratón de tela para gatos">
+      <div class="product-name">Juguete Ratón de Tela</div>
+      <div class="product-description">Estimula el instinto cazador de tu gato con este divertido juguete.</div>
+      <div class="product-price">$7.50</div>
+      <a href="compra.php?producto=juguete" class="buy-btn">Comprar</a>
+    </div>
+    <div class="slide">
+      <img src="img4.jpg" alt="Champú hipoalergénico para mascotas">
+      <div class="product-name">Champú Hipoalergénico</div>
+      <div class="product-description">Ideal para mascotas con piel sensible. Aroma suave y natural.</div>
+      <div class="product-price">$12.00</div>
+      <a href="compra.php?producto=champu" class="buy-btn">Comprar</a>
+    </div>
+  </div>
+
+  <!-- Flechas de navegación -->
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">❮</button>
+    <button onclick="nextSlide()">❯</button>
+  </div>
+</div>
+
+<!-- Botones generales -->
+<div class="buttons-container">
+  <a href="index.php">← Volver al Inicio</a>
+</div>
+
+<script>
+  let currentIndex = 0;
+  const slides = document.getElementById("slides");
+  const totalSlides = slides.children.length;
+
+  function updateSlide() {
+    slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+  }
+
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % totalSlides;
+    updateSlide();
+  }
+
+  function prevSlide() {
+    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+    updateSlide();
+  }
+</script>
+
+</body>
+</html>
